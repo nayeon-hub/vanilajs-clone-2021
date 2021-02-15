@@ -6,6 +6,13 @@ const TODOS_LS = "toDos";
 // LS = localStorage
 const toDos = [];
 
+function deleteTodo(event){
+    const btn = event.target;
+    const li = btn.parentNode;
+    console.dir(event.target);
+    // toDoList.removeChild(li);
+}
+
 function saveToDos() {
   localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
   //value에 저장할 때는 list->string으로 바꿔서~
@@ -17,6 +24,7 @@ function paintToDo(text) {
   const span = document.createElement("span");
   const newId = toDos.length + 1;
   delBtn.innerText = "❌";
+  delBtn.addEventListener("click",deleteTodo)
   span.innerText = text;
 
   toDoList.appendChild(li);
