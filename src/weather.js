@@ -1,7 +1,6 @@
 const weather = document.querySelector(".top");
 
 const COORDS = "coords"; //coords 좌표
-const API_KEY = "";
 
 function getWeather(lat, lng) {
   fetch(
@@ -46,6 +45,7 @@ function loadCoords() {
   const loadedCoords = localStorage.getItem(COORDS);
   if (loadedCoords === null) {
     askForCoords();
+    weather.innerHTML = "<span>no api</span><br>";
   } else {
     //getWeather
     const parseCoords = JSON.parse(loadedCoords);
