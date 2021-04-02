@@ -3,32 +3,60 @@
   <head>
     <title>Momontum</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="src/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
-    <div class="top"></div>
+    <img />
+    <div class="top">
+      <div class="top-left">
+        <span>ToDo</span>
+        <div class="todo hiding">
+          <div class="arrow-box"></div>
+          <div class="todo-box">
+            <div class="todo-info">
+              <h2>Pending</h2>
+              <ul class="pending-ul"></ul>
+              <h2>Finished</h2>
+              <ul class="finished-ul"></ul>
+            </div>
+            <form class="todo-form">
+              <input type="text" placeholder="Add task" />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="top-right">
+        <span aria-label="temperature"></span><br />
+        <span area-label="space"></span>
+      </div>
+    </div>
     <div class="mmt">
       <div class="js-clock">
         <h1>00:00</h1>
       </div>
-      <form class="js-form form css-form">
-        <label for="name">Hello,What's your name?</label>
-        <div>
-          <input type="text" id="name" />
-        </div>
+      <form class="js-form">
+        <label for="name">Hello,What's your name?</label><br />
+        <input type="text" id="name" />
       </form>
-      <h2 class="js-greetings greetings"></h2>
-      <form class="js-toDoForm">
-        <label for="toDo">Write a to do</label>
-        <div>
-          <input type="text" id="toDo" />
-        </div>
+      <h2 class="js-greetings hiding"></h2>
+      <form class="js-toDoForm hiding">
+        <label for="toDo">What is your main focus for today?</label><br />
+        <input type="text" id="toDo" />
       </form>
-      <ul class="js-toDoList"></ul>
+      <div class="js-focusInfo hiding">
+        <h3 class="today-title">today</h3>
+        <p class="today-focus">
+          <input type="checkbox" class="checked pending" />
+          <span></span>
+          <button type="button" class="">❌</button>
+        </p>
+      </div>
     </div>
     <script src="src/clock.js"></script>
     <script src="src/greeting.js"></script>
-    <script src="src/todo.js"></script>
+    <script src="src/todoList.js"></script>
+    <script src="src/focusTodo.js"></script>
     <script src="src/bg.js"></script>
     <script src="src/weatherApi.js"></script>
     <script src="src/weather.js"></script>

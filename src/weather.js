@@ -1,4 +1,5 @@
-const weather = document.querySelector(".top");
+const weather = document.querySelector(".top-right");
+const spans = weather.querySelectorAll("span");
 
 const COORDS = "coords"; //coords 좌표
 
@@ -12,8 +13,8 @@ function getWeather(lat, lng) {
     .then(function (json) {
       const temperature = json.main.temp;
       const place = json.name;
-      weather.innerHTML = `<span>${temperature}°</span><br>
-      <span>${place}</span>`;
+      spans[0].innerText = `${temperature}°`;
+      spans[1].innerText = `${place}`;
     });
 }
 
@@ -45,7 +46,6 @@ function loadCoords() {
   const loadedCoords = localStorage.getItem(COORDS);
   if (loadedCoords === null) {
     askForCoords();
-    weather.innerHTML = "<span>no api</span><br>";
   } else {
     //getWeather
     const parseCoords = JSON.parse(loadedCoords);
